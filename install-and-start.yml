@@ -2,8 +2,8 @@
 - name: install some packages and start and enable some services
   hosts: all
   # You need to define the following variables:
-  # - packages
-  # - variables
+  # - packages - list of packages to install
+  # - services - list of services to enable and start
 
   tasks:
     - name: yum install some packages
