@@ -1,0 +1,13 @@
+---
+- name: count cpu cores
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: count cpu cores (not threads)
+      shell: grep -E '^core id' </proc/cpuinfo | sort | uniq | wc -l
+      register: count
+
+    - name: print the count
+      debug:
+        msg: "{{ count.stdout }}"
