@@ -1,0 +1,11 @@
+---
+- name: remove some packages
+  hosts: all
+  # You need to define the following variables:
+  # - packages - list of packages to install
+
+  tasks:
+    - name: yum remove some packages
+      yum:
+        name: "{{ packages }}"
+        state: uninstalled
