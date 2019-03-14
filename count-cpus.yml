@@ -10,4 +10,4 @@
 
     - name: print the count
       debug:
-        msg: "CPU Count = {{ count.stdout }}"
+        msg: "CPU Core Count = {{ count.stdout }}"
