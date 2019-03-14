@@ -8,4 +8,4 @@
     - name: yum remove some packages
       yum:
         name: "{{ packages }}"
-        state: uninstalled
+        state: removed
