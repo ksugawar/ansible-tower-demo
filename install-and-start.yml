@@ -1,0 +1,19 @@
+---
+- name: install some packages and start and enable some services
+  hosts: all
+  # You need to define the following variables:
+  # - packages
+  # - variables
+
+  tasks:
+    - name: yum install some packages
+      yum:
+        name: "{{ packages }}"
+        state: latest
+
+    - name: start and enable some services
+      service:
+        name: "{{ item }}"
+        state: started
+        enabled: yes
+      loop: "{{ services }}"
