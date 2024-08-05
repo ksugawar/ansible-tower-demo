@@ -1,7 +1,7 @@
 ---
 - name: a tiny demo of use of jinja2 templating in extra vars
-  host: localhost
-  gather-facts: no
+  hosts: localhost
+  gather_facts: no
   # job template should have 2 extra variables extravar1 and extravar2 defined something like the following:
   # extravar1: "def"
   # extravar2: "abc{{ extravar1 }}"
