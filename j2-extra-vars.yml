@@ -1,0 +1,14 @@
+---
+- name: a tiny demo of use of jinja2 templating in extra vars
+  host: localhost
+  gather-facts: no
+  # job template should have 2 extra variables extravar1 and extravar2 defined something like the following:
+  # extravar1: "def"
+  # extravar2: "abc{{ extravar1 }}"
+
+  tasks:
+    - ansible.builtin.debug:
+        var: extravar1
+
+    - ansible.builtin.debug:
+        var: extravar2
