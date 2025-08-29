@@ -1,0 +1,11 @@
+---
+- name: show exposed file test
+  hosts: localhost
+  
+  tasks:
+    - name: show exposed file
+      ansible.builtin.command: cat /etc/krb5.conf
+      register: result
+
+    - ansible.builtin.debug:
+        msg: "{{ result.stdout }}"
